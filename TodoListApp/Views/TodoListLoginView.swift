@@ -8,8 +8,52 @@
 import SwiftUI
 
 struct TodoListLoginView: View {
+    
+    @State var emailText: String = ""
+    @State var passwordText: String = ""
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            VStack {
+                // MARK: - Header
+                
+                HeaderView()
+                
+                // MARK: - Login Form
+                
+                Form {
+                    TextField("E-mail", text: $emailText)
+                        .textFieldStyle(DefaultTextFieldStyle())
+                        .keyboardType(.emailAddress)
+                    TextField("Password", text: $passwordText)
+                        .textFieldStyle(DefaultTextFieldStyle())
+                    
+                    Button {
+                        // - Action
+                    } label: {
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 10)
+                                .foregroundColor(Color.blue)
+                            
+                            Text("Log In")
+                                .foregroundColor(Color.white)
+                                .bold()
+                        }
+                    }
+                    .padding()
+                }
+                
+                // MARK: - Create Account
+                
+                VStack {
+                    Text("New around here?")
+                    NavigationLink("Create An Account", destination: TodoListRegisterView())
+                }
+                .padding(.bottom, 50)
+                
+                Spacer()
+            }
+        }
     }
 }
 
