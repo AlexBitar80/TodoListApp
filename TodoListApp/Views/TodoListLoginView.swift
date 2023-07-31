@@ -17,7 +17,12 @@ struct TodoListLoginView: View {
             VStack {
                 // MARK: - Header
                 
-                HeaderView()
+                HeaderView(
+                    title: "To Do List",
+                    subTitle: "Get things done",
+                    angle: 15,
+                    backgroundColor: .pink
+                )
                 
                 // MARK: - Login Form
                 
@@ -42,6 +47,7 @@ struct TodoListLoginView: View {
                     }
                     .padding()
                 }
+                .offset(y: -50)
                 
                 // MARK: - Create Account
                 
