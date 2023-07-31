@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE156E552A77FB1B003B9074 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE156E542A77FB1B003B9074 /* HeaderView.swift */; };
 		CE71A0B12A6C5E9E00DF729F /* TodoListAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE71A0B02A6C5E9E00DF729F /* TodoListAppApp.swift */; };
 		CE71A0B32A6C5E9E00DF729F /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE71A0B22A6C5E9E00DF729F /* MainView.swift */; };
 		CE71A0B52A6C5E9E00DF729F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE71A0B42A6C5E9E00DF729F /* Assets.xcassets */; };
@@ -33,6 +34,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE156E542A77FB1B003B9074 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		CE71A0AD2A6C5E9E00DF729F /* TodoListApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TodoListApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE71A0B02A6C5E9E00DF729F /* TodoListAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListAppApp.swift; sourceTree = "<group>"; };
 		CE71A0B22A6C5E9E00DF729F /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 				CE71A0D62A6C658400DF729F /* TodoListLoginView.swift */,
 				CE71A0D82A6C658E00DF729F /* TodoListRegisterView.swift */,
 				CE71A0DA2A6C65A200DF729F /* TodoListItemView.swift */,
+				CE156E542A77FB1B003B9074 /* HeaderView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -233,6 +236,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE71A0D92A6C658E00DF729F /* TodoListRegisterView.swift in Sources */,
+				CE156E552A77FB1B003B9074 /* HeaderView.swift in Sources */,
 				CE71A0E92A6C661E00DF729F /* TodoListItemViewViewModel.swift in Sources */,
 				CE71A0DB2A6C65A200DF729F /* TodoListItemView.swift in Sources */,
 				CE71A0DD2A6C65B300DF729F /* MainViewViewModel.swift in Sources */,
