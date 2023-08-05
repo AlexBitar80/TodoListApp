@@ -31,6 +31,7 @@
 		CE71A0E52A6C65FE00DF729F /* TodoListLoginViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE71A0E42A6C65FE00DF729F /* TodoListLoginViewViewModel.swift */; };
 		CE71A0E72A6C660E00DF729F /* TodoListRegisterViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE71A0E62A6C660E00DF729F /* TodoListRegisterViewViewModel.swift */; };
 		CE71A0E92A6C661E00DF729F /* TodoListItemViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE71A0E82A6C661E00DF729F /* TodoListItemViewViewModel.swift */; };
+		CEF3A9952A7E07C4007250DA /* ToDoListButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF3A9942A7E07C4007250DA /* ToDoListButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		CE71A0E42A6C65FE00DF729F /* TodoListLoginViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListLoginViewViewModel.swift; sourceTree = "<group>"; };
 		CE71A0E62A6C660E00DF729F /* TodoListRegisterViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListRegisterViewViewModel.swift; sourceTree = "<group>"; };
 		CE71A0E82A6C661E00DF729F /* TodoListItemViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListItemViewViewModel.swift; sourceTree = "<group>"; };
+		CEF3A9942A7E07C4007250DA /* ToDoListButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 				CE71A0D82A6C658E00DF729F /* TodoListRegisterView.swift */,
 				CE71A0DA2A6C65A200DF729F /* TodoListItemView.swift */,
 				CE156E542A77FB1B003B9074 /* HeaderView.swift */,
+				CEF3A9942A7E07C4007250DA /* ToDoListButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -243,6 +246,7 @@
 				CE71A0D72A6C658400DF729F /* TodoListLoginView.swift in Sources */,
 				CE71A0B32A6C5E9E00DF729F /* MainView.swift in Sources */,
 				CE71A0E52A6C65FE00DF729F /* TodoListLoginViewViewModel.swift in Sources */,
+				CEF3A9952A7E07C4007250DA /* ToDoListButton.swift in Sources */,
 				CE71A0B12A6C5E9E00DF729F /* TodoListAppApp.swift in Sources */,
 				CE71A0D32A6C656500DF729F /* TodoListView.swift in Sources */,
 				CE71A0E32A6C65ED00DF729F /* TodoListNewItemViewViewModel.swift in Sources */,
@@ -389,6 +393,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -418,6 +423,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

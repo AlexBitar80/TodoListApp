@@ -9,8 +9,7 @@ import SwiftUI
 
 struct TodoListLoginView: View {
     
-    @State var emailText: String = ""
-    @State var passwordText: String = ""
+    @StateObject var viewModel = TodoListLoginViewViewModel()
     
     var body: some View {
         NavigationView {
@@ -27,23 +26,16 @@ struct TodoListLoginView: View {
                 // MARK: - Login Form
                 
                 Form {
-                    TextField("E-mail", text: $emailText)
+                    TextField("E-mail", text: $viewModel.emailText)
                         .textFieldStyle(DefaultTextFieldStyle())
                         .keyboardType(.emailAddress)
-                    TextField("Password", text: $passwordText)
+                        .autocorrectionDisabled()
+                    
+                    TextField("Password", text: $viewModel.passwordText)
                         .textFieldStyle(DefaultTextFieldStyle())
                     
-                    Button {
-                        // - Action
-                    } label: {
-                        ZStack {
-                            RoundedRectangle(cornerRadius: 10)
-                                .foregroundColor(Color.blue)
-                            
-                            Text("Log In")
-                                .foregroundColor(Color.white)
-                                .bold()
-                        }
+                    ToDoListButton(title: "Log In", background: .blue, foreground: .white) {
+                        viewModel.login()
                     }
                     .padding()
                 }
