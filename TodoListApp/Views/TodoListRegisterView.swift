@@ -13,6 +13,9 @@ struct TodoListRegisterView: View {
     @State var email: String = ""
     @State var password: String = ""
     
+    @State private var isKeyboardVisible = false
+    @State private var headerHeight: CGFloat = 300
+    
     var body: some View {
         VStack {
             // MARK: - Header
@@ -21,6 +24,7 @@ struct TodoListRegisterView: View {
                        subTitle: "Start organizing todos",
                        angle: -15,
                        backgroundColor: .orange)
+            .frame(height: headerHeight)
             
             Form {
                 TextField("Full Name", text: $fullName)
@@ -38,12 +42,34 @@ struct TodoListRegisterView: View {
                 ToDoListButton(title: "Register Now", background: .green, foreground: .white) {
                     print("Registring...")
                 }
-                .padding()
             }
-            .offset(y: -50)
+            .padding(.vertical, -40)
+            .offset(y: -60)
+            .onAppear {
+                NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: .main) { notification in
+                    self.keyboardWillShow(notification: notification)
+                }
+                
+                NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: .main) { notification in
+                    self.keyboardWillHide(notification: notification)
+                }
+            }
+            .onDisappear {
+                NotificationCenter.default.removeObserver(self)
+            }
             
             Spacer()
         }
+    }
+    
+    private func keyboardWillShow(notification: Notification) {
+        isKeyboardVisible = true
+        headerHeight = 140
+    }
+    
+    private func keyboardWillHide(notification: Notification) {
+        isKeyboardVisible = false
+        headerHeight = 300
     }
 }
 
