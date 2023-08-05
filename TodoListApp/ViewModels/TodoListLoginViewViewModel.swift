@@ -6,3 +6,14 @@
 //
 
 import Foundation
+
+class TodoListLoginViewViewModel: ObservableObject {
+    
+    @Published var emailText: String = ""
+    @Published var passwordText: String = ""
+    
+    func login() {
+        print("Logging in...")
+    }
+}
+
