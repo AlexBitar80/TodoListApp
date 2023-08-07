@@ -9,10 +9,8 @@ import SwiftUI
 
 struct TodoListRegisterView: View {
     
-    @State var fullName: String = ""
-    @State var email: String = ""
-    @State var password: String = ""
-    
+  
+    @StateObject var viewModel = TodoListRegisterViewViewModel()
     @State private var isKeyboardVisible = false
     @State private var headerHeight: CGFloat = 300
     
@@ -27,20 +25,20 @@ struct TodoListRegisterView: View {
             .frame(height: headerHeight)
             
             Form {
-                TextField("Full Name", text: $fullName)
+                TextField("Full Name", text: $viewModel.fullName)
                     .textFieldStyle(DefaultTextFieldStyle())
                     .autocorrectionDisabled()
                 
-                TextField("E-mail", text: $email)
+                TextField("E-mail", text: $viewModel.email)
                     .textFieldStyle(DefaultTextFieldStyle())
                     .autocorrectionDisabled()
-                    .textInputAutocapitalization(.none)
+                    .textInputAutocapitalization(.never)
                 
-                SecureField("Password", text: $password)
+                SecureField("Password", text: $viewModel.password)
                     .textFieldStyle(DefaultTextFieldStyle())
                 
                 ToDoListButton(title: "Register Now", background: .green, foreground: .white) {
-                    print("Registring...")
+                    viewModel.register()
                 }
             }
             .padding(.vertical, -40)
