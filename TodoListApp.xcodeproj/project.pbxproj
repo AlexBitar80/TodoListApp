@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CE156E552A77FB1B003B9074 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE156E542A77FB1B003B9074 /* HeaderView.swift */; };
+		CE40C1D62A7EE4DB004991F7 /* Codable + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE40C1D52A7EE4DB004991F7 /* Codable + Extensions.swift */; };
 		CE71A0B12A6C5E9E00DF729F /* TodoListAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE71A0B02A6C5E9E00DF729F /* TodoListAppApp.swift */; };
 		CE71A0B32A6C5E9E00DF729F /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE71A0B22A6C5E9E00DF729F /* MainView.swift */; };
 		CE71A0B52A6C5E9E00DF729F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE71A0B42A6C5E9E00DF729F /* Assets.xcassets */; };
@@ -36,6 +37,7 @@
 
 /* Begin PBXFileReference section */
 		CE156E542A77FB1B003B9074 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		CE40C1D52A7EE4DB004991F7 /* Codable + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Codable + Extensions.swift"; sourceTree = "<group>"; };
 		CE71A0AD2A6C5E9E00DF729F /* TodoListApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TodoListApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE71A0B02A6C5E9E00DF729F /* TodoListAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListAppApp.swift; sourceTree = "<group>"; };
 		CE71A0B22A6C5E9E00DF729F /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 				CE71A0B42A6C5E9E00DF729F /* Assets.xcassets */,
 				CE71A0C52A6C61BB00DF729F /* GoogleService-Info.plist */,
 				CE71A0B02A6C5E9E00DF729F /* TodoListAppApp.swift */,
+				CE40C1D52A7EE4DB004991F7 /* Codable + Extensions.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -248,6 +251,7 @@
 				CE71A0E52A6C65FE00DF729F /* TodoListLoginViewViewModel.swift in Sources */,
 				CEF3A9952A7E07C4007250DA /* ToDoListButton.swift in Sources */,
 				CE71A0B12A6C5E9E00DF729F /* TodoListAppApp.swift in Sources */,
+				CE40C1D62A7EE4DB004991F7 /* Codable + Extensions.swift in Sources */,
 				CE71A0D32A6C656500DF729F /* TodoListView.swift in Sources */,
 				CE71A0E32A6C65ED00DF729F /* TodoListNewItemViewViewModel.swift in Sources */,
 				CE71A0D12A6C655400DF729F /* TodoListProfileView.swift in Sources */,

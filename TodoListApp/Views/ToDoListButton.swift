@@ -27,6 +27,7 @@ struct ToDoListButton: View {
                     .bold()
             }
         }
+        .frame(height: 50)
     }
 }
 

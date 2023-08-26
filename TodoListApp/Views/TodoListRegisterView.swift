@@ -9,9 +9,10 @@ import SwiftUI
 
 struct TodoListRegisterView: View {
     
-    @State var fullName: String = ""
-    @State var email: String = ""
-    @State var password: String = ""
+  
+    @StateObject var viewModel = TodoListRegisterViewViewModel()
+    @State private var isKeyboardVisible = false
+    @State private var headerHeight: CGFloat = 300
     
     var body: some View {
         VStack {
@@ -21,29 +22,52 @@ struct TodoListRegisterView: View {
                        subTitle: "Start organizing todos",
                        angle: -15,
                        backgroundColor: .orange)
+            .frame(height: headerHeight)
             
             Form {
-                TextField("Full Name", text: $fullName)
+                TextField("Full Name", text: $viewModel.fullName)
                     .textFieldStyle(DefaultTextFieldStyle())
                     .autocorrectionDisabled()
                 
-                TextField("E-mail", text: $email)
+                TextField("E-mail", text: $viewModel.email)
                     .textFieldStyle(DefaultTextFieldStyle())
                     .autocorrectionDisabled()
-                    .textInputAutocapitalization(.none)
+                    .textInputAutocapitalization(.never)
                 
-                SecureField("Password", text: $password)
+                SecureField("Password", text: $viewModel.password)
                     .textFieldStyle(DefaultTextFieldStyle())
                 
                 ToDoListButton(title: "Register Now", background: .green, foreground: .white) {
-                    print("Registring...")
+                    viewModel.register()
                 }
-                .padding()
             }
-            .offset(y: -50)
+            .padding(.vertical, -40)
+            .offset(y: -60)
+            .onAppear {
+                NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: .main) { notification in
+                    self.keyboardWillShow(notification: notification)
+                }
+                
+                NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: .main) { notification in
+                    self.keyboardWillHide(notification: notification)
+                }
+            }
+            .onDisappear {
+                NotificationCenter.default.removeObserver(self)
+            }
             
             Spacer()
         }
+    }
+    
+    private func keyboardWillShow(notification: Notification) {
+        isKeyboardVisible = true
+        headerHeight = 140
+    }
+    
+    private func keyboardWillHide(notification: Notification) {
+        isKeyboardVisible = false
+        headerHeight = 300
     }
 }
 
