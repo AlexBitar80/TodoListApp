@@ -22,6 +22,7 @@ struct TodoListLoginView: View {
                     angle: 15,
                     backgroundColor: .pink
                 )
+                .offset(y: -20)
                 
                 // MARK: - Login Form
                 

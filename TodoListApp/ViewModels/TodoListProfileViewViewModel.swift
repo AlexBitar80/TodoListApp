@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+class TodoListProfileViewViewModel: ObservableObject {
+    init() {
+        
+    }
+}
