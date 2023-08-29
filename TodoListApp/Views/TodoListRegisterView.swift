@@ -21,15 +21,8 @@ struct TodoListRegisterView: View {
                        backgroundColor: .orange)
             
             VStack(spacing: 16) {
-//                if !viewModel.errorMessage.isEmpty {
-//                    HStack {
-//                        Spacer()
-//                        Text(viewModel.errorMessage)
-//                            .foregroundColor(Color.red)
-//                    }
-//                }
                 
-                TextField("Full Name", text: $viewModel.fullName)
+                TextField("E-mail", text: $viewModel.fullName)
                     .padding()
                     .background(Color.secondary.opacity(0.12))
                     .cornerRadius(10)
