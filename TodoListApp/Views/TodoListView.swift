@@ -25,10 +25,13 @@ struct TodoListView: View {
             .navigationTitle("To Do List")
             .toolbar {
                 Button {
-                    // - Action
+                    viewModel.showingNewItemView.toggle()
                 } label: {
                     Image(systemName: "plus")
                 }
+            }
+            .sheet(isPresented: $viewModel.showingNewItemView) {
+                TodoListNewItemView(newItemPresented: $viewModel.showingNewItemView)
             }
         }
     }
