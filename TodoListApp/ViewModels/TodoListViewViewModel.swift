@@ -14,4 +14,8 @@ class TodoListViewViewModel: ObservableObject {
     init() {
         
     }
+    
+    // MARK: - Helpers
+    
+    func delete(id: String) {}
 }

@@ -11,4 +11,8 @@ class TodoListItemViewViewModel: ObservableObject {
     init() {
         
     }
+    
+    // MARK: - Helpers
+    
+    func toogleIsDone(item: ToDoListItem) {}
 }
