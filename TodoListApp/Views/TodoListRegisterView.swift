@@ -22,15 +22,14 @@ struct TodoListRegisterView: View {
             
             VStack(spacing: 16) {
                 
-                TextField("E-mail", text: $viewModel.fullName)
+                TextField("Full Name", text: $viewModel.fullName)
                     .padding()
                     .background(Color.secondary.opacity(0.12))
                     .cornerRadius(10)
-                    .keyboardType(.emailAddress)
                     .textInputAutocapitalization(.never)
                     .autocorrectionDisabled()
                 
-                TextField("Full Name", text: $viewModel.email)
+                TextField("E-mail", text: $viewModel.email)
                     .padding()
                     .background(Color.secondary.opacity(0.12))
                     .cornerRadius(10)

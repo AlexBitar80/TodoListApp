@@ -51,18 +51,18 @@ struct TodoListLoginView: View {
                     ToDoListButton(title: "Log In", background: .blue, foreground: .white) {
                         viewModel.login()
                     }
+                    
+                    Spacer()
+                    
+                     // MARK: - Create Account
+                    
+                    VStack {
+                        Text("New around here?")
+                        NavigationLink("Create An Account", destination: TodoListRegisterView())
+                    }
                 }
                 .padding(.horizontal, 20)
-                .offset(y: -32)
-                
-                Spacer()
-               
-                // MARK: - Create Account
-                
-                VStack {
-                    Text("New around here?")
-                    NavigationLink("Create An Account", destination: TodoListRegisterView())
-                }
+                .offset(y: -100)
                 
                 Spacer()
             }
