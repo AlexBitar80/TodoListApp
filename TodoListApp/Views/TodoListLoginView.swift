@@ -10,8 +10,6 @@ import SwiftUI
 struct TodoListLoginView: View {
     
     @StateObject var viewModel = TodoListLoginViewViewModel()
-    @State private var isKeyboardVisible = false
-    @State private var headerHeight: CGFloat = 300
     
     var body: some View {
         NavigationView {
@@ -24,63 +22,51 @@ struct TodoListLoginView: View {
                     angle: 15,
                     backgroundColor: .pink
                 )
-                .frame(height: headerHeight)
+                .offset(y: -20)
                 
                 // MARK: - Login Form
                 
-                Form {
+                VStack(spacing: 16) {
                     if !viewModel.errorMessage.isEmpty {
-                        Text(viewModel.errorMessage)
-                            .foregroundColor(Color.red)
+                        HStack {
+                            Spacer()
+                            Text(viewModel.errorMessage)
+                                .foregroundColor(Color.red)
+                        }
                     }
                     
                     TextField("E-mail", text: $viewModel.emailText)
-                        .textFieldStyle(DefaultTextFieldStyle())
+                        .padding()
+                        .background(Color.secondary.opacity(0.12))
+                        .cornerRadius(10)
                         .keyboardType(.emailAddress)
                         .textInputAutocapitalization(.never)
                         .autocorrectionDisabled()
                     
                     SecureField("Password", text: $viewModel.passwordText)
-                        .textFieldStyle(DefaultTextFieldStyle())
+                        .padding()
+                        .background(Color.secondary.opacity(0.12))
+                        .cornerRadius(10)
                     
                     ToDoListButton(title: "Log In", background: .blue, foreground: .white) {
                         viewModel.login()
                     }
-                }
-                .offset(y: -50)
-                .padding(.vertical, -40)
-                .onAppear {
-                    NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: .main) { notification in
-                        self.keyboardWillShow(notification: notification)
-                    }
                     
-                    NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: .main) { notification in
-                        self.keyboardWillHide(notification: notification)
+                    Spacer()
+                    
+                     // MARK: - Create Account
+                    
+                    VStack {
+                        Text("New around here?")
+                        NavigationLink("Create An Account", destination: TodoListRegisterView())
                     }
                 }
-                .onDisappear {
-                    NotificationCenter.default.removeObserver(self)
-                }
-               
-                // MARK: - Create Account
+                .padding(.horizontal, 20)
+                .offset(y: -100)
                 
-                VStack {
-                    Text("New around here?")
-                    NavigationLink("Create An Account", destination: TodoListRegisterView())
-                }
-                .opacity(isKeyboardVisible ? 0 : 1)
+                Spacer()
             }
         }
-    }
-    
-    private func keyboardWillShow(notification: Notification) {
-        isKeyboardVisible = true
-        headerHeight = 280
-    }
-    
-    private func keyboardWillHide(notification: Notification) {
-        isKeyboardVisible = false
-        headerHeight = 300
     }
 }
 

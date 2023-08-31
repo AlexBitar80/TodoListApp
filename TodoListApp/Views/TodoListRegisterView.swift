@@ -9,10 +9,7 @@ import SwiftUI
 
 struct TodoListRegisterView: View {
     
-  
     @StateObject var viewModel = TodoListRegisterViewViewModel()
-    @State private var isKeyboardVisible = false
-    @State private var headerHeight: CGFloat = 300
     
     var body: some View {
         VStack {
@@ -22,52 +19,40 @@ struct TodoListRegisterView: View {
                        subTitle: "Start organizing todos",
                        angle: -15,
                        backgroundColor: .orange)
-            .frame(height: headerHeight)
             
-            Form {
+            VStack(spacing: 16) {
+                
                 TextField("Full Name", text: $viewModel.fullName)
-                    .textFieldStyle(DefaultTextFieldStyle())
+                    .padding()
+                    .background(Color.secondary.opacity(0.12))
+                    .cornerRadius(10)
+                    .textInputAutocapitalization(.never)
                     .autocorrectionDisabled()
                 
                 TextField("E-mail", text: $viewModel.email)
-                    .textFieldStyle(DefaultTextFieldStyle())
-                    .autocorrectionDisabled()
+                    .padding()
+                    .background(Color.secondary.opacity(0.12))
+                    .cornerRadius(10)
+                    .keyboardType(.emailAddress)
                     .textInputAutocapitalization(.never)
+                    .autocorrectionDisabled()
                 
                 SecureField("Password", text: $viewModel.password)
-                    .textFieldStyle(DefaultTextFieldStyle())
+                    .padding()
+                    .background(Color.secondary.opacity(0.12))
+                    .cornerRadius(10)
+                
+                Spacer()
                 
                 ToDoListButton(title: "Register Now", background: .green, foreground: .white) {
                     viewModel.register()
                 }
             }
-            .padding(.vertical, -40)
-            .offset(y: -60)
-            .onAppear {
-                NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: .main) { notification in
-                    self.keyboardWillShow(notification: notification)
-                }
-                
-                NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: .main) { notification in
-                    self.keyboardWillHide(notification: notification)
-                }
-            }
-            .onDisappear {
-                NotificationCenter.default.removeObserver(self)
-            }
+            .padding(.horizontal, 20)
+            .offset(y: -90)
             
             Spacer()
         }
-    }
-    
-    private func keyboardWillShow(notification: Notification) {
-        isKeyboardVisible = true
-        headerHeight = 140
-    }
-    
-    private func keyboardWillHide(notification: Notification) {
-        isKeyboardVisible = false
-        headerHeight = 300
     }
 }
 
