@@ -6,16 +6,28 @@
 //
 
 import Foundation
+import FirebaseFirestore
 
 class TodoListViewViewModel: ObservableObject {
     
     @Published var showingNewItemView: Bool = false
     
-    init() {
-        
+    private let userId: String
+    
+    init(userId: String) {
+        self.userId = userId
     }
     
     // MARK: - Helpers
     
-    func delete(id: String) {}
+    func delete(id: String) {
+        
+        let db = Firestore.firestore()
+        
+        db.collection("users")
+            .document(userId)
+            .collection("todos")
+            .document(id)
+            .delete()
+    }
 }
